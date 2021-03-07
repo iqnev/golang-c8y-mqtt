@@ -63,14 +63,14 @@ func hearDevice() {
 }
 
 func registerDevice() {
-	log.Info("Try to registering Device with serial: " + serialNumber)
+	log.Info("Try to registering Device with serial: " + configuration.SERIAL_NUMBER)
 
 	client := common.GetInstance().GetMqqtClient()
 	client.Publish("s/us", 0, false, createDevice(configuration.DEVICE_NAME, "c8y_MQTTDevice"))
 
 	time.Sleep(1 * time.Second)
 
-	client.Publish("s/us", 0, false, createHardwareInfo(serialNumber, hardwareModel, reversion))
+	client.Publish("s/us", 0, false, createHardwareInfo(configuration.SERIAL_NUMBER, configuration.HARDWARE_MODEL, configuration.REVESION))
 
 	time.Sleep(1 * time.Second)
 
@@ -79,6 +79,7 @@ func registerDevice() {
 
 func createSmartRestTemplates() {
 	log.Info("Creating SmartResetTemplates.")
+	//TODO
 }
 
 func sub(client mqtt.Client, topic string) {
@@ -115,7 +116,6 @@ func createTemperatureMeasurement(value string, time string) string {
 func temperatureService() {
 
 	for {
-
 		temp := strconv.Itoa(randInt(10, 33))
 		log.Info("Sending temeperature meserment: " + temp + "C")
 		common.GetInstance().GetMqqtClient().Publish("s/us", 2, false, createTemperatureMeasurement(temp, ""))

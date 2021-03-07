@@ -1,24 +1,23 @@
 package main
 
 import (
+	"os"
 	"time"
 
 	"github.com/iqnev/golang-c8y-mqtt/internal"
 	"github.com/iqnev/golang-c8y-mqtt/internal/common"
-	log "github.com/sirupsen/logrus"
 )
 
 var exit = make(chan bool)
 
 func main() {
-
-	log.Info("Dev Configuration")
-
-	configuration := common.GetConfiguration()
+	var env string
+	if len(os.Args) == 2 {
+		env = os.Args[1]
+	}
+	configuration := common.GetConfiguration(env)
 
 	common.InitClientOptions(configuration)
-
-	println(configuration.C8Y_SEREVR_URL)
 
 	internal.RunDevice(configuration)
 
