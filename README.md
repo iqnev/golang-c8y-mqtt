@@ -42,3 +42,6 @@ The file name of the above configuration is important because you have the abili
 and you can pass the given environment as command line Arguments
 
 `go run main.go [environment]` 
+
+
+[![Temperature measurement](https://github.com/iqnev/resources/blob/main/device_temperature_golang_mqtt_example.JPG "Temperature measurement")](https://github.com/iqnev/resources/blob/main/device_temperature_golang_mqtt_example.JPG "Temperature measurement")
