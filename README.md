@@ -9,11 +9,14 @@ A simple example of an MQTT client for the C8Y. It creates a new device, subscru
 ## Quick Start
 
 1. Clone the repository
+
 ```shell
 git clone https://github.com/iqnev/golang-c8y-mqtt.git
 cd golang-c8y-mqtt
 ```
 2. Configure the Cumulocity  settings
+
+
 You have to create a json file with the following template
 ```json
 {
