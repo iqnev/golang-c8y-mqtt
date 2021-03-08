@@ -1,6 +1,6 @@
 # golang-c8y-mqtt
 
-A simple example of an MQTT client for the C8Y. It creates a new device, subscrubes for certain topic, creates  an MQTT Smart templates and pushes measurements periodically into the platform
+A simple example of an MQTT client for the C8Y. It creates a new device, subscrubes for a certain topic, creates  an MQTT Smart templates and pushes measurements periodically into the platform
 
 ## Requirements:
 
